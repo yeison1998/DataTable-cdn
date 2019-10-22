@@ -1,0 +1,27 @@
+ <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "/api/SendHC/GetRespuestaXML/",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $('#Table').DataTable({
+                        "aaData": data,
+                        "columns": [
+                            { "data": "id_Historia_Clinica" },
+                            { "data": "tipo_Documento" },
+                            { "data": "numero_Documento" },
+                            { "data": "respuesta_Envio" },
+                            { "data": "fecha_Envio" }
+                        ]
+                    });
+                },
+
+              
+
+            });
+        });
+
+
+    </script>
